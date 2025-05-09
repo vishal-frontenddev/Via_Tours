@@ -1,30 +1,25 @@
 import React from 'react'
 import Nav from './components/Nav'
-import Destination from './components/Destination'
-import Activities from './components/Activities'
-import Usd from './components/Usd'
-import SignUp from './components/SignUp'
-import { Route, Routes } from 'react-router-dom'
-
+import Destination from './Destination';
+import Activities from './Activities';
+import USD from './USD';
+import SignUp from './SignUp';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
+    
+    <Nav />
+    
+    <Routes>
 
-     
-        <Nav />
-     
+     <Route path="/" element={<Destination />} />
+     <Route path="Activities" element={<Activities />} />
+     <Route path="USD" element={<USD />} />
+     <Route path="SignUp" element={<SignUp />} />
 
-
-     <Routes>
-
-      <Route path='/' element={<Destination />} />
-      <Route path='/activities' element={<Activities />} />
-      <Route path='/usd' element={<Usd />} />
-      <Route path='/signup' element={<SignUp />} />
-
-     </Routes>
-     
+    </Routes>
 
     </>
   )

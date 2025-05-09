@@ -1,17 +1,16 @@
 import React from 'react'
+import image from './assets/image.png'
 
-// .chooseTourImg
-import image from '../assets/image.png';
-import ticket from '../assets/ticket.svg.png';
-import bulb from '../assets/hot-air-balloon.svg.png'
-import diamond from '../assets/diamond.svg.png'
-import medal from '../assets/medal.svg.png'
+// choose tour
+import TourzCard from './components/TourzCard';
 
-// chooseTourCard
-import TourzCard from './TourzCard';
+import ticket from './assets/ticket.svg.png';
+import bulb from './assets/hot-air-balloon.svg.png'
+import diamond from './assets/diamond.svg.png'
+import medal from './assets/medal.svg.png'
 
 // destination card
-import DestinationCard from './DestinationCard';
+import DestinationCard from './components/DestinationCard';
 
 
 // swipper
@@ -22,28 +21,38 @@ import 'swiper/css';
 
 
 // imgTrendingDestination
-import paris from '../assets/paris.png';
-import singapore from '../assets/singapore.jpg';
-import roma from '../assets/roma.jpg';
-import bangkok from '../assets/bangkok.jpg';
-import bali from '../assets/bali.jpg';
-import phuket from '../assets/phuket.webp';
-import tokyo from '../assets/tokyo.jpg';
-import cappadocia from '../assets/cappadocia.jpg';
+import paris from './assets/paris.png';
+import singapore from './assets/singapore.jpg';
+import roma from './assets/roma.jpg';
+import bangkok from './assets/bangkok.jpg';
+import bali from './assets/bali.jpg';
+import phuket from './assets/phuket.webp';
+import tokyo from './assets/tokyo.jpg';
+import cappadocia from './assets/cappadocia.jpg';
 
 
-// popularCard
-import PopularCard from '../components/PopularCard';
+// tourCard
+import TourCard from './components/TourCard';
 
-// import parisfrance from '../assets/parisfrance.png';
-import parachute from '../assets/parachute.png'
+// img
+import parisFrance from './assets/parisfrance.png'
+import newYorkUsa from './assets/NewYork2.png'
+import londonUk from './assets/London,UK.2.png'
+import USnewYork from './assets/NewYork,USA.png'
+import franceParish from './assets/parishFrance2.png'
+import UsnewYork from './assets/New_usa.png'
+import UKlondon from './assets/bali.jpg'
+import NewUSa from './assets/New_usa.2.png'
 
 
-// activityCard
-import ActivityCard from "../components/ActivityCard";
+// banner img
+import parachute from './assets/parachute.png'
+
+// footer
+import Footer from './components/Footer';
+
 
 const Destination = () => {
-
 
   // chooseTourdJSON
   let features = [
@@ -73,8 +82,6 @@ const Destination = () => {
   ];
 
 
-  // destinationCardJSON
-
   let destinations = [
     { img: paris, city: 'Paris', tours: '100+ Tours' },
     { img: singapore, city: 'Singapore', tours: '300+ Tours' },
@@ -86,101 +93,85 @@ const Destination = () => {
     { img: cappadocia, city: 'Cappadocia', tours: '900+ Tours' },
   ];
 
-
-  // pupularTourJSON
-  let tours = [
+  const tours = [
     {
-      // image: parisfrance,
-      image: 'https://example.com/image2.jpg',
-      location: 'Paris, France',
-      title: 'Centipede Tour – Guided Arizona Desert Tour by ATV',
+      image: parisFrance,
+      location: "Paris, France",
+      title: "Centipede Tour – Guided Arizona Desert Tour by ATV",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
-      price: 189.25,
-    },
-
-    {
-
-      // image: newyork,
-      image: 'https://example.com/image2.jpg',
-      location: 'New York, USA',
-      title: 'Molokini and Turtle Town Snorkeling Adventure Aboard',
-      rating: 4.8,
-      reviews: 243,
-      duration: '4 days',
-      price: 225,
-
-    },
-
-    {
-      // image: LondonUK,
-      image: 'https://example.com/image2.jpg',
-      location: 'Paris, France',
-      title: 'Centipede Tour – Guided Arizona Desert Tour by ATV',
-      rating: 4.8,
-      reviews: 243,
-      duration: '4 days',
+      duration: "4 days",
       price: 189.25,
     },
     {
-      // image: new_usa,
-      image: 'https://example.com/image2.jpg',
-      location: 'New York, USA',
-      title: 'Molokini and Turtle Town Snorkeling Adventure Aboard',
+      image: newYorkUsa,
+      location: "New York, USA",
+      title: "Molokini and Turtle Town Snorkeling Adventure Aboard",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
+      duration: "4 days",
       price: 225,
     },
-
     {
-      // image: parisFrance2,
-      image: 'https://example.com/image2.jpg',
-      location: 'Paris, France',
-      title: 'Centipede Tour – Guided Arizona Desert Tour by ATV',
+      image: londonUk,
+      location: "London, UK",
+      title: "Westminster Walking Tour & Westminster Abbey Entry",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
+      duration: "4 days",
+      price: 943,
+    },
+    {
+      image: USnewYork,
+      location: "New York, USA",
+      title: "All Inclusive Ultimate Circle Island Day Tour with Lunch",
+      rating: 4.8,
+      reviews: 243,
+      duration: "4 days",
+      price: 771,
+    },
+    {
+      image: franceParish,
+      location: "Paris, France",
+      title: "Space Center Houston Admission Ticket",
+      rating: 4.8,
+      reviews: 243,
+      duration: "4 days",
       price: 189.25,
     },
     {
-      // image: new_usa2,
-      image: 'https://example.com/image2.jpg',
-      location: 'New York, USA',
-      title: 'Molokini and Turtle Town Snorkeling Adventure Aboard',
+      image: UsnewYork,
+      location: "New York, USA",
+      title: "Clear Kayak Tour of Shell Key Preserve and Tampa Bay Area",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
+      duration: "4 days",
       price: 225,
     },
-
     {
-      // image: LondonUK2,
-      image: 'https://example.com/image2.jpg',
-      location: 'Paris, France',
-      title: 'Centipede Tour – Guided Arizona Desert Tour by ATV',
+      image: UKlondon,
+      location: "London, UK",
+      title: "History and Hauntings of Salem Guided Walking Tour",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
-      price: 189.25,
+      duration: "4 days",
+      price: 943,
     },
     {
-      // image: nY2,
-      image: 'https://example.com/image2.jpg',
-      location: 'New York, USA',
-      title: 'Molokini and Turtle Town Snorkeling Adventure Aboard',
+      image: NewUSa,
+      location: "New York, USA",
+      title: "Mauna Kea Summit Sunset and Stars Free Astro Photos Hilo Kona Waikoloa Pick Up",
       rating: 4.8,
       reviews: 243,
-      duration: '4 days',
-      price: 225,
+      duration: "4 days",
+      price: 771,
     },
   ];
 
   return (
     <>
 
-      <div id='destination-sec' className="relative h-[90vh] w-full bg-cover bg-center text-white" style={{ backgroundImage: `url(${image})` }}>
+      <div id='destination-sec' className="relative h-[90vh] w-full bg-cover bg-center text-white overflow-x-hidden" style={{ backgroundImage: `url(${image})` }}>
         {/* Overlay */}
         <div id='destination-main' className="absolute inset-0"></div>
 
@@ -231,6 +222,7 @@ const Destination = () => {
       </div>
 
 
+
       {/* tourz-card */}
 
       <section id="tourz-sec" className="pt-17 pb-10  flex justify-center items-center flex-col">
@@ -256,7 +248,7 @@ const Destination = () => {
           Trending Destinations
         </div>
 
-        <div id="trendingdesti-main" className=" md:w-[70%] bg-amber-100">
+        <div id="trendingdesti-main" className=" w-[62%] md:">
           <Swiper
             modules={[Pagination, Autoplay]} // ✅ Add Autoplay module
             pagination={{ clickable: true }}
@@ -276,7 +268,7 @@ const Destination = () => {
             }}
           >
             {destinations.map((item, index) => (
-              <SwiperSlide key={index} className="!m-0 !p-0">
+              <SwiperSlide key={index} className="px-[5px]">
                 <DestinationCard
                   destinationImg={item.img}
                   destinationHead={item.city}
@@ -289,28 +281,26 @@ const Destination = () => {
       </section>
 
 
-      {/* popular tour */}
-      <section id='popularTour' className=' w-full flex justify-center'>
-        <div id="popularTourMain" className='h-[80vh] w-[70%] bg-amber-500'>
-          <section className="p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">Find Popular Tours</h2>
-              <a href="#" className="text-sm text-blue-600 hover:underline">See all</a>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {tours.map((tour, index) => (
-                <PopularCard key={index} {...tour} />
-              ))}
-            </div>
-          </section>
+      <section className="px-4 w-[100%] flex justify-center">
+        <div id='tour-sec' className='w-[70%] md:px-8 lg:px-12 py-10'>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Find Popular Tours</h2>
+            <a href="#" className="text-sm text-blue-600 hover:underline">
+              See all
+            </a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {tours.map((tour, index) => (
+              <TourCard key={index} {...tour} />
+            ))}
+          </div>
         </div>
       </section>
 
 
-
       {/* promo banner*/}
-      <div className=" w-[100%] h-[50vh] flex justify-center mt-20 mb-20">
-        <div className="bg-[#fff6ef] w-[70%]  rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-md">
+      <div className=" w-[100%] h-[50vh] flex justify-center mt-6 mb-20">
+        <div className="bg-[#fff6ef] w-[64%]  rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-md">
 
           {/* Text Section */}
           <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
@@ -340,43 +330,9 @@ const Destination = () => {
       </div>
 
 
+      {/* footer */}
 
-      {/* activity-card */}
-
-      <section className="max-w-7xl mx-auto px-4 py-10">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-            Popular things to do
-          </h2>
-          <a href="#" className="text-sm text-gray-500 hover:underline">
-            See all
-          </a>
-        </div>
-
-        {/* Custom masonry-style 3 column layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {/* Column 1 */}
-          <div className="flex flex-col gap-4">
-            <ActivityCard title="Cruises" image="/assets/cruise.png" />
-            <ActivityCard title="Museum Tour" image="../assets/mueseum.png" />
-          </div>
-
-          {/* Column 2 */}
-          <div className="flex flex-col gap-4">
-            <ActivityCard title="Beach Tours" image="/assets/beachtours.png" height="h-[400px]" />
-          </div>
-
-          {/* Column 3 */}
-          <div className="flex flex-col gap-4">
-            <ActivityCard title="City Tours" image="/assets/cityTours.png" height="h-[190px]" />
-                <div className='flex gap-4'>
-                <ActivityCard title="Food" image="/assets/foodimg.png" />
-                <ActivityCard title="Hiking" image="/assets/hiking.png" />
-                </div>
-          </div>
-        </div>
-      </section>
+      <Footer />
 
 
 

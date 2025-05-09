@@ -1,78 +1,29 @@
 @import "tailwindcss";
 
-#navbar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
-}
+
 #nav {
-    width: 70%;
-}
-#txt {
-    font-size: 16px;
-    color: rgb(150, 147, 147);
-    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
 }
 #link {
-    align-items: center;
-    font-size: 18px;
-    gap: 18px;
+    height: auto;
+    width: auto;
 }
-#login {
-    padding: 8px 27px;
-    border-radius: 15px;
-    background-color: #eb662b;
-    color: #fff;
-}
-#hamb {
-    display: none;
-}
-
-
-
-
-
-
-
-
-/* #destination-sec {
-    background-image: url(assets/image.png);
-} */
-
-#destination-main {
-    background-color: #00000054;
-}
-
-
-
 
 @media screen and (max-width: 768px) { 
 
-    #navbar {
-        height: auto;
-    }
     #nav{
-        width: 90%;
-    } 
-    #logo {
-        width: 150px;
-    }
-    #txt {
-        display: none;
-    }
-    #link {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        z-index: 1111;
-       background-color: rgb(161, 163, 161);
-    }
-    #hamb {
-        display: block;
-        color: black;
+        height: 70px;
+        padding: 0 29px;
     }
 
+    #hamb {
+        display: flex;
+        align-items: center;
+    }
+
+    #link {
+        width: 100%;
+    }
 }

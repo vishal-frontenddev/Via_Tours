@@ -1,54 +1,46 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
-import Btn from './Btn';
+import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { IoMdMenu, IoMdClose } from 'react-icons/io';
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false); // ✅ fixed
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      {/* Navbar */}
-      <nav id='navbar' className=' text-white'>
-        <div id='nav' className='h-[80px] w-[95%] mx-auto flex justify-between items-center'>
+    <div id='nav' className='relative h-[100px] w-full overflow-x-hidden md:justify-center md:gap-[150px]'>
 
-          {/* Logo Section */}
-          <div id='logo' className='flex items-center gap-[50px]'>
-            <div id="logo-img">
-              <img src={logo} alt="logo" className='w-[200px]' />
-            </div>
-            <div id='txt' className='hidden md:block text-sm text-gray-200'>
-              Search destination or activities
-            </div>
-          </div>
-
-          {/* Hamburger Icon */}
-          <div id='hamb' className='md:hidden cursor-pointer z-50' onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
-          </div>
-
-          {/* Nav Links */}
-          <ul
-            id='link'
-            className={`
-              flex-col items-center text-black py-4 space-y-4
-              absolute top-[80px] left-0 bg-gray-600
-              transform transition-transform duration-300 ease-in-out
-              ${isOpen ? "translate-x-0" : "-translate-x-[100vw]"}
-              md:static md:flex md:flex-row md:translate-x-0 md:bg-transparent md:space-y-0 md:space-x-6 md:py-0
-            `}
-          >
-            <Link to={'/'} onClick={() => setIsOpen(false)}>Destination</Link>
-            <Link to={'/activities'} onClick={() => setIsOpen(false)}>Activities</Link>
-            <Link to={'/usd'} onClick={() => setIsOpen(false)}>USD</Link>
-            <Link to={'/signup'} onClick={() => setIsOpen(false)}>SignUp</Link>
-            <Btn />
-          </ul>
+      {/* Logo */}
+      <div id='logo' className='flex items-center gap-4 md:gap-10'>
+        <div id='logo-img' className='w-[180px] h-[60px] flex justify-center items-center'>
+          <img className='w-full object-cover' src={logo} alt="logo" />
         </div>
-      </nav>
-    </>
+        <p id='ptxt' className='hidden md:block mt-2.5'>Search destination or activities</p>
+      </div>
+
+      {/* Hamburger */}
+      <div id='hamb' className="md:hidden cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <IoMdClose size={40} color="black" /> : <IoMdMenu size={40} color="black" />}
+      </div>
+
+      {/* ONE UL for both desktop and mobile */}
+      <ul
+        id='link'
+        className={`
+          flex flex-col md:flex-row gap-6 md:gap-10 text-[18px] items-center
+          md:static md:translate-x-0 md:flex bg-red-500 md:bg-transparent
+          fixed top-[70px] left-0  z-40 transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'} `} >
+
+        <Link to="/">Destination</Link>
+        <Link to="Activities">Activities</Link>
+        <Link to="USD">USD</Link>
+        <Link to="SignUp">SignUp</Link>
+
+        <button className='h-[50px] w-[120px] bg-orange-400 rounded-full text-[20px] text-amber-50'><a href="/">Log in</a></button>
+      </ul>
+    </div>
   );
 };
 
 export default Nav;
+
